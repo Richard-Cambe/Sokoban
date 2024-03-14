@@ -1,0 +1,27 @@
+#include "inc/sokoban.h"
+
+int main()
+{
+    printf("Starting the game...\n\n");
+
+    // Creating the game structure
+    game sokoban;
+    init_game(&sokoban);
+
+    // Launching the game loop
+    game_loop(&sokoban);
+
+    // Printing game results
+    if(check_win(&sokoban) == 1)
+    {
+      printf ("YOU WIN");
+    }
+    else if(check_loss(&sokoban) == -1)
+    {
+      printf("YOU LOSE");
+    }
+
+    // Free the map
+    free(sokoban.map)
+    exit(0);
+}
